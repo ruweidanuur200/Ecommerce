@@ -1,0 +1,742 @@
+/* Reset and general styling */
+body {
+    margin: 0;
+    background: #b5bec7;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background: linear-gradient(45deg, #1abc9c, #16a085);
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 30px 15px;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#Chapters{
+    padding: 12px;
+    border-radius: 20px;
+    background-color: #27d210;
+}
+.navbar {
+    background: linear-gradient(45deg, #f1c40f, #e67e22); 
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #eef3f2;
+}
+#us{
+    position: relative;
+}
+#us:hover{
+    padding: 12px;
+    border-radius: 20px;
+    background-color: #27d210;
+}
+/* Menu Styling */
+.menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.menu li a {
+    font-size: 1rem;
+}
+
+.dropdown {
+    list-style: none;
+    margin: 0;
+    padding: 8px;
+    width: 90px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #dde0e3;
+    display: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.dropdown li {
+    z-index: -999;
+    margin: 0;
+}
+
+.dropdown li a {
+    color: black;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.dropdown li a:hover {
+    border-radius: 20px;
+    background-color: #1abc9c;
+}
+
+/* Show Dropdown on Hover */
+.menu > li:hover .dropdown {
+    display: block;
+}
+
+/* Responsive Burger Menu */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.burger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+/* Show Burger Icon on Small Screens */
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #34495e;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Show Burger Icon */
+    .burger {
+        display: flex;
+    }
+
+    /* Hide Menu by Default */
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: linear-gradient(45deg, #f1c40f, #e67e22); /* Matches navbar */
+        margin: 10px 0 0 0;
+        padding: 10px 0;
+        border-radius: 10px;
+    }
+
+    /* Show Menu When Active */
+    .menu.active {
+        display: flex;
+    }
+
+    /* Adjust Menu Items for Mobile */
+    .menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .dropdown {
+        color: #292a2b;
+        position: static;
+        background-color: #eef3f2;
+        width: 100%;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .dropdown li a {
+        color: #242425;
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+/* Footer Styling */
+.footer {
+    background: linear-gradient(45deg, #f1c40f, #e67e22); 
+    color: white;
+    text-align: center;
+    padding: 20px 15px;
+    position: relative;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Hover Effect */
+.footer:hover {
+    background: linear-gradient(45deg, #f1c40f, #e67e22);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 15px 10px;
+    }
+
+    .footer p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.js {
+    background: linear-gradient(45deg, #f1c40f, #e67e22); /* Vibrant JavaScript-like gradient */
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    max-width: 600px;
+    animation: popIn 1s ease-out;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Hover Effect */
+.js:hover {
+    transform: scale(1.05); /* Slight enlargement */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}
+
+/* Animated Gradient Background */
+.js::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    transform: skewX(-30deg);
+    opacity: 0.5;
+    transition: transform 0.5s ease;
+}
+
+.js:hover::before {
+    transform: translateX(100%) skewX(-30deg);
+}
+
+/* Animation - Pop In Effect */
+@keyframes popIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .js {
+        font-size: 1.8rem;
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .js {
+        font-size: 1.5rem;
+        padding: 10px 15px;
+    }
+}
+
+
+.styled-button {
+    background: linear-gradient(45deg, #1abc9c, #16a085); /* Gradient background */
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.styled-button:hover {
+    background: linear-gradient(45deg, #16a085, #1abc9c); /* Reverse gradient */
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Active/Click Effect */
+.styled-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .styled-button {
+        margin-bottom: 10px;
+        width: 100%; /* Full-width button on smaller screens */
+        padding: 15px; /* Larger padding for touch-friendliness */
+        font-size: 1.2rem; /* Slightly larger font for mobile */
+    }
+}
+
+/* General H1 Styling */
+h2 {
+    font-family: 'Arial', sans-serif; /* Clean, modern font */
+    font-size: 3rem; /* Large font for emphasis */
+    color: #2c3e50; /* Dark blue for readability */
+    text-align: center; /* Centered text */
+    margin: 20px 0; /* Space around the heading */
+    text-transform: uppercase; /* Uppercase for importance */
+    letter-spacing: 2px; /* Spacing between letters for a modern look */
+    background: linear-gradient(45deg, #1abc9c, #16a085); /* Gradient for text */
+    /* -webkit-background-clip: text; Clip gradient to text */
+    -webkit-text-fill-color: transparent; /* Make the gradient visible */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2.2rem; /* Adjust font size for smaller screens */
+        letter-spacing: 1px; /* Reduce letter spacing */
+        margin: 15px 0; /* Adjust spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.8rem; /* Smaller font for very small screens */
+        text-align: left; /* Align left for narrow screens */
+        margin: 10px 15px; /* Add some padding for breathing space */
+    }
+}
+
+
+/* Styling the Info Section */
+.info {
+    background: linear-gradient(45deg, #f5f7fa, #c3cfe2); /* Soft gradient background */
+    border: 2px solid #dcdde1; /* Light border for subtle structure */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    max-width: 600px; /* Restrict width for better readability */
+    margin: 20px auto; /* Center the section */
+    text-align: center; /* Center content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Styling the Text */
+.info p {
+    font-size: 1.2rem; /* Slightly larger text for readability */
+    color: #2c3e50; /* Dark blue for contrast */
+    margin: 10px 0; /* Space between paragraphs */
+    line-height: 1.6; /* Improve text spacing */
+    font-weight: bold;
+}
+
+/* Styling the Image */
+.info img {
+    display: block; /* Center the image */
+    margin: 15px auto;
+    border-radius: 50%; /* Circular image */
+    border: 3px solid #16a085; /* Add a border matching the design */
+    width: 100px; /* Restrict image size */
+    height: 100px; /* Maintain circular shape */
+    object-fit: cover; /* Ensure the image fills the circle properly */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .info {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+    .info p {
+        font-size: 1rem; /* Smaller font size */
+    }
+    .info img {
+        width: 80px; /* Reduce image size */
+        height: 80px; /* Maintain proportion */
+    }
+}
+
+@media (max-width: 480px) {
+    .info {
+        padding: 10px; /* Smaller padding for narrow screens */
+        margin: 10px; /* Adjust margin for tight spaces */
+    }
+    .info p {
+        font-size: 0.9rem; /* Further reduce font size */
+    }
+    .info img {
+        width: 60px; /* Reduce image size further */
+        height: 60px; /* Maintain proportion */
+    }
+}
+
+.wrapper {
+    background-color: #f8f9fa; 
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    padding: 10px;
+    height: 40px;
+    max-width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    font-family: Arial, sans-serif; 
+}
+
+/* Paragraph Styling */
+#message3 {
+    font-size: 1.2rem; 
+    color: #333; 
+    margin: 0; 
+    padding: 10px; 
+    line-height: 1.5; 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 10px; 
+    }
+    #message3 {
+        font-size: 1rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        padding: 8px; 
+        margin: 10px; 
+    }
+    #message3 {
+        font-size: 0.9rem; /* Further reduce font size for compact view */
+    }
+}
+
+/* Assignments style */
+/* Form Styling */
+form {
+    background: linear-gradient(45deg, #74b9ff, #0984e3); /* Vibrant gradient background */
+    border: 1px solid #dfe6e9; /* Light border for subtle definition */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px;
+    max-width: 800px; /* Restrict form width */
+    margin: 20px auto; /* Center the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    font-family: Arial, sans-serif; /* Clean font */
+    color: #ffffff; /* Text color for contrast */
+    text-align: center; /* Center the content */
+}
+
+/* Headings Styling */
+form h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #ffffff; /* White text for contrast */
+    text-transform: uppercase; /* Add emphasis with uppercase */
+    border-bottom: 2px solid #dfe6e9; /* Underline for section titles */
+    display: inline-block; /* Align the underline with text width */
+    padding-bottom: 5px;
+}
+
+/* Button Styling */
+form input[type="button"] {
+    background: #6c5ce7; /* Button background color */
+    border: none; /* Remove default borders */
+    border-radius: 10px; /* Rounded buttons */
+    color: white; /* White text for contrast */
+    font-size: 1rem; /* Standard font size */
+    padding: 10px 15px; /* Add spacing */
+    margin: 10px 5px; /* Space between buttons */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+/* Button Hover Effect */
+form input[type="button"]:hover {
+    background: #00cec9; /* Change background on hover */
+    transform: scale(1.1); /* Slightly enlarge button */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add more shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    form {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+    form h3 {
+        font-size: 1.3rem; /* Reduce heading size */
+    }
+    form input[type="button"] {
+        font-size: 0.9rem; /* Adjust button font size */
+        padding: 8px 12px; /* Compact buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 10px; /* Further reduce padding */
+    }
+    form h3 {
+        font-size: 1.1rem; /* Smaller heading size */
+    }
+    form input[type="button"] {
+        font-size: 0.8rem; /* Smaller button text */
+        margin: 5px 3px; /* Reduce button spacing */
+        padding: 6px 10px; /* Compact button padding */
+    }
+}
+/* Assignments style */
+
+/* lap style */
+/* Container Styling */
+.lap {
+    background: linear-gradient(135deg, #ff9ff3, #feca57); /* Gradient for a vibrant look */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    text-align: center; /* Center-align content */
+    max-width: 600px; /* Limit width */
+    margin: 20px auto; /* Center container */
+}
+
+/* Button Styling */
+.lap input[type="button"] {
+    background: #1dd1a1; /* Bright green background */
+    color: #fff; /* White text for contrast */
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Rounded buttons */
+    font-size: 1rem; /* Standard font size */
+    padding: 12px 20px; /* Add spacing for buttons */
+    margin: 10px 5px; /* Space between buttons */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+/* Button Hover Effect */
+.lap input[type="button"]:hover {
+    background: #10ac84; /* Darker green on hover */
+    transform: scale(1.1); /* Slightly enlarge button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .lap {
+        padding: 15px; /* Adjust padding */
+    }
+    .lap input[type="button"] {
+        font-size: 0.9rem; /* Reduce button font size */
+        padding: 10px 15px; /* Compact button padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .lap {
+        padding: 10px; /* Smaller padding */
+    }
+    .lap input[type="button"] {
+        font-size: 0.8rem; /* Smaller text */
+        margin: 8px 3px; /* Adjust button spacing */
+        padding: 8px 12px; /* Smaller button padding */
+    }
+}
+/* lap style */
+
+
+/* ch7 */
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#myel {
+    width: 34%;
+    height: 68%;
+    background: #000000;
+    color: #eef3f2;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+/* #myel:hover {
+    background: #e2e6ea;
+    transform: scale(1.05);
+} */
+#parentList{
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul .li {
+    width: 37px;
+    background: #f8f9fa;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+ul .li:hover {
+    background: #e2e6ea;
+}
+
+#output, #output2, #foutput {
+    background: #f8f9fa;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-height: 20px;
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    button {
+        width: 100%;
+    }
+
+    #myel, ul .li {
+        font-size: 0.9em;
+    }
+}

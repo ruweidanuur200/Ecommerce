@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+   
+</head>
+<body>
+    <script defer src="main.js"></script>
+    <header>
+        <nav>
+            <div class="navbar">
+              <i class='bx bx-menu'></i>
+             
+              <div class="logo" ><a href="#">RiDo Shope</a></div>
+              <div class="nav-links">
+                <div class="sidebar-logo">
+                  <span class="logo-name"></span>
+                  <i class='bx bx-x' ></i>
+                </div>
+                <ul class="links">
+                    <!-- <img src="logo.png" alt=""> -->
+                  <li><a href="index.html">HOME</a></li>
+                  <li>
+                    <a href="index.html#categories">Product Categories</a>
+                  </li>
+                  <li><a href="#">ABOUT US</a></li>
+                  <li><a href="contect.html">CONTACT US</a></li>
+                  <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                  <li>
+                    <a href="#">chapters</a>
+                    <i class='bx bxs-chevron-down js-arrow arrow '></i>
+                    <ul class="js-sub-menu sub-menu">
+                      <li><a href="ch1.html">chapter1</a></li>
+                      <li><a href="ch2.html">chapter2</a></li>
+                      <li><a href="ch3.html">chapter3</a></li>
+                      <li><a href="ch4.html">chapter4</a></li>
+                      <li><a href="ch5.html">chapter5</a></li>
+                      <li><a href="ch6.html">chapter6</a></li>
+                      <li><a href="ch7.html">chapter7</a></li>
+                      <li><a href="ch8.html">chapter8</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="lapme.html">Lap</a></li>
+                 <li><a href="assigment.html">Assigment</a></li>
+                 <li>
+                    <a href="#">chapters</a>
+                    <i class='bx bxs-chevron-down js-arrow arrow '></i>
+                    <ul class="js-sub-menu sub-menu">
+                      <li><a href="ch1.html">chapter1</a></li>
+                      <li><a href="ch2.html">chapter2</a></li>
+                      <li><a href="ch3.html">chapter3</a></li>
+                      <li><a href="ch4.html">chapter4</a></li>
+                      <li><a href="ch5.html">chapter5</a></li>
+                      <li><a href="ch6.html">chapter6</a></li>
+                      <li><a href="ch7.html">chapter7</a></li>
+                      <li><a href="ch8.html">chapter8</a></li>
+                    </ul>
+                  </li>
+                 <li><a href="assi.html">Assigment</a></li>
+                 <li><a href="lap.html">lap</a></li>
+                 
+                </ul>
+                
+              </div>
+            </div>
+    <center>
+        <div class="container">
+            
+    
+            <!-- Event Listener -->
+            <button id="myButton">Click Me!</button><br><br>
+    
+            <!-- Inline Event Handler -->
+            <button onclick="func()">Inline Event Handler</button><br><br>
+        
+    
+    
+        <!-- Mouse Events -->
+         <div id="myel">Hover Over Me</div><br><br>
+    
+    
+         <!-- keyboard events -->
+        <input type="text" id="text" placeholder="Type Something">
+        <div id="output"></div>
+    
+    
+        <!-- Focus events -->
+        <input type="text" id="text2" placeholder="Type Something">
+        <div id="output2"></div>
+    
+    
+        <!-- focus element in form -->
+         <form id="myform">
+            <input type="text" id="textinp" placeholder="Type Something">
+            <button type="submit">Submit</button>
+         </form>
+         <div id="foutput"></div>
+    
+        <!-- Event Delegation Using A Single Event Listener On The Parent Element -->
+         <ul id="parentList">
+            <li class="li">Item 1</li>
+            <li class="li">Item 2</li>
+            <li class="li">Item 3</li>
+            <li class="li">Item 4</li>
+    </ul>
+    </div>
+    
+    
+    <script>
+
+        // ch7
+
+const element = document.getElementById("myButton");
+element.addEventListener("click", myfun);
+function myfun(){
+alert("Button Clicked!")
+}
+ 
+
+// inline event handler
+function func(){
+alert("Button Clicked!")
+}
+
+
+// mouse event
+let element2 = document.getElementById("myel");
+element2.addEventListener("mouseover",function(){
+element2.style.backgroundColor = "green";
+});
+element2.addEventListener("mouseout",function(){
+element2.style.backgroundColor = "blue";
+});
+
+
+//keyboard event
+const textinput = document.getElementById("text");
+const outputdiv = document.getElementById("output");
+textinput.addEventListener("keydown", function (event){
+outputdiv.innerText = `Keydown: ${event.key}`;
+});
+textinput.addEventListener("keypress", function (event){
+outputdiv.innerText += `\nKeypress: ${event.key}`;
+});
+textinput.addEventListener("keyup", function (event){
+outputdiv.innerText += `\nKeyup: ${event.key}`;
+});
+
+
+//Focus events
+const textinput2 = document.getElementById("text2");
+const outputdiv2 = document.getElementById("output2");
+textinput2.addEventListener("focus", function (){
+updateOutput("focused");
+});
+textinput2.addEventListener("blur", function (){
+updateOutput("blurred");
+});
+function updateOutput(className){
+outputdiv2.className = className;
+}
+
+
+//form focus
+const textinp = document.getElementById("textinp");
+const outdiv = document.getElementById("foutput");
+const form = document.getElementById("myform");
+textinp.addEventListener("input", function () {
+if (textinp.value != "") {
+    updateOutput2("input changed!", "valid");
+} else {
+    updateOutput2("input changed with empty!", "invalid");
+}
+});
+form.addEventListener("submit", function (event) {
+event.preventDefault();
+updateOutput2("form submitted!", "valid");
+});
+function updateOutput2(message2, classname2) {
+outdiv.innerText = message2;
+outdiv.className = classname2;
+}
+
+
+//Event Delegation Using A Single Event Listener On The Parent Element
+const parentList = document.getElementById("parentList");
+parentList.addEventListener("click", function(event){
+if(event.target.tagName === "LI"){
+    alert("Clicked on: "+event.target.innerText);
+}
+});
+
+// Function to toggle the menu visibility on mobile screens
+function toggleMenu() {
+const navLinks = document.querySelector('.nav-links');
+navLinks.classList.toggle('active');
+}
+
+// ch7
+    </script>
+        <footer class="footer">
+            <p>Ruweida Nuur Xuseen &copy; 2024</p>
+        </footer>
+
+
+
+</body>
+</html>
